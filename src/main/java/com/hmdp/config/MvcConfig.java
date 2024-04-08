@@ -22,10 +22,10 @@ public class MvcConfig implements WebMvcConfigurer {
         //验证
         registry.addInterceptor(new LoginInterceptor())
                 .excludePathPatterns(
-                        "shop/**",
-                        "shop-type/**",
-                        "voucher/**",
-                        "blog/hot",
+                        "/shop/**",
+                        "/shop-type/**",
+                        "/voucher/**",
+                        "/blog/hot",
                         "/user/code",
                         "/user/login"
                 ).order(1);
