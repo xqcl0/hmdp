@@ -31,7 +31,7 @@ public class RefreshTokenInterceptor implements HandlerInterceptor {
         Map<Object, Object> userMap = stringRedisTemplate.opsForHash().entries(key);
 
         if (userMap.isEmpty()) {
-            return true;
+            return true; //未取到
         }
         //存ThreadLocal
         UserHolder.saveUser(BeanUtil.fillBeanWithMap(userMap, new UserDTO(), false));
